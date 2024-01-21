@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      <img ngSrc="assets/images/prabeenlogo.png" fill="true">
+    </div>
+    <div class="card-body">
+      <h1 class="card-title text-center">Log<span style="color: #2eca7f">In</span></h1>
+      <form [formGroup]="loginForm" (ngSubmit)="login()">
+        <div class="mb-3">
+          <label for="userName" class="form-label"><span class="text-danger">*</span>Username</label>
+          <input type="text" class="form-control" id="userName" placeholder="Username" formControlName="username"
+                 [ngClass]="{ 'is-invalid': isSubmitted && formControls['username'].errors }"
+                 autofocus
+                 required>
+        </div>
+        <div class="mb-3">
+          <label for="userName" class="form-label"><span class="text-danger">*</span>Password</label>
+          <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password"
+                 [ngClass]="{ 'is-invalid': isSubmitted && formControls['password'].errors }"
+                 required>
+        </div>
+        <div class="d-grid mb-2">
+          <button class="btn fw-bold text-uppercase" [ngClass]="{'disabled': formControls['password'].errors || formControls['username'].errors }" style="background: #2eca7f; color: aliceblue" type="submit">
+            LogIn
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
