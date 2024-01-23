@@ -1,0 +1,42 @@
+<div class="card-body p-4 p-sm-5">
+  <h5 class="card-title text-center mb-3 fw-bolder fs-5">Add Blog</h5>
+  <form [formGroup]="blogForm" (ngSubmit)="saveBlog()" >
+    <div class="mb-3">
+      <label for="title" class="form-label"><span class="text-danger">*</span>Title</label>
+      <input type="text" class="form-control" id="title" placeholder="Title" formControlName="title"
+             [ngClass]="{ 'is-invalid': isSubmitted && formControls['title'].errors }"
+             autofocus
+             required>
+    </div>
+    <div class="mb-3">
+      <label for="url" class="form-label"><span class="text-danger">*</span>URl Link</label>
+      <input type="text" class="form-control" id="url" placeholder="Url Link" formControlName="url"
+             [ngClass]="{ 'is-invalid': isSubmitted && formControls['url'].errors }"
+             required>
+    </div>
+    <div class="mb-3">
+      <label for="img" class="form-label"><span class="text-danger">*</span>Thumbnail</label>
+      <input type="file" class="form-control" id="img" placeholder="Upload Thumbnail" formControlName="img"
+             [ngClass]="{ 'is-invalid': isSubmitted && formControls['img'].errors }"
+             accept="image/png, image/jpeg"
+             (change)="getBase64($event)"
+             required>
+    </div>
+    <div class="mb-3">
+      <label for="postDate" class="form-label"><span class="text-danger">*</span>Post Date</label>
+      <input type="text" class="form-control" id="postDate" placeholder="yyyy-mm-dd" formControlName="postDate"
+             [ngClass]="{ 'is-invalid': isSubmitted && formControls['postDate'].errors }"
+             ngbDatepicker
+             #d="ngbDatepicker"
+             (click)="d.toggle()"
+             required>
+    </div>
+    <div class="d-grid mb-2">
+      <button class="btn btn fw-bold text-uppercase"
+              [ngClass]="{'disabled': formControls['title'].errors || formControls['url'].errors || formControls['img'].errors || formControls['postDate'].errors || tempImg==null}"
+              style="background: #2eca7f; color: aliceblue" type="submit">
+        Save
+      </button>
+    </div>
+  </form>
+</div>
