@@ -3,6 +3,9 @@ import {AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule, Validators
 import {ToastService} from "../../service/toast.service";
 import {NgClass} from "@angular/common";
 import {NgbInputDatepicker} from "@ng-bootstrap/ng-bootstrap";
+import {BlogModel} from "../../model/blog.model";
+import {BlogService} from "../../service/blog.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-blog',
@@ -18,10 +21,13 @@ import {NgbInputDatepicker} from "@ng-bootstrap/ng-bootstrap";
 export class AddBlogComponent {
   blogForm: FormGroup;
   toastService: ToastService;
+  months =['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
 
   isSubmitted: boolean = false;
   tempImg: string = '';
-  constructor(formBuilder: FormBuilder, toastService: ToastService) {
+  constructor(formBuilder: FormBuilder,
+              toastService: ToastService,
+              private blogService: BlogService) {
     this.blogForm = formBuilder.group({
       url: ['',[Validators.required]],
       title: ['',[Validators.required]],
@@ -35,14 +41,23 @@ export class AddBlogComponent {
   }
   saveBlog(): void{
     const formValue = this.blogForm.value;
-    // const blog: BlogModel = {
-    //   title: formValue.title,
-    //   img: this.tempImg,
-    //
-    // };
-    // this.blogService.saveProduct(blog)
-    console.log(this.tempImg);
-    // this.toastService.show("Error Message", { classname: 'bg-danger text-light fs-5', delay: 2000 });
+    // const dates = formValue.postDate.split("-");
+    const blog: BlogModel = {
+      id: '',
+      title: formValue.title,
+      img: this.tempImg,
+      url: formValue.url,
+      year: formValue.postDate.year.toString(),
+      month: this.months[formValue.postDate.month],
+      day: formValue.postDate.day.toString(),
+    };
+    this.blogService.saveBlog(blog).subscribe({
+      next: value => {
+        location.reload();
+        },
+      error: err => {
+        this.toastService.show("Something Went Wrong", { classname: 'bg-danger text-light fs-5', delay: 2000 });},
+    });
   }
 
   getBase64(event: any): void {

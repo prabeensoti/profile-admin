@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {BlogModel} from "../model/blog.model";
 
@@ -8,13 +8,13 @@ import {BlogModel} from "../model/blog.model";
 })
 export class BlogService {
 
-  API_ENDPOINT: string = "https://admin.prabeen.soti/api/v1";
+  API_ENDPOINT: string = "https://mt4942ktyj.execute-api.us-east-1.amazonaws.com/v1";
 
 
   constructor(private http: HttpClient) {
   }
 
-  public saveProduct(blog: BlogModel): Observable<any>{
+  public saveBlog(blog: BlogModel): Observable<any>{
     return this.http.post<BlogModel>(this.API_ENDPOINT+"/blogs", blog);
   }
 
