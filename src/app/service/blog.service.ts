@@ -8,7 +8,7 @@ import {BlogModel} from "../model/blog.model";
 })
 export class BlogService {
 
-  API_ENDPOINT: string = "https://mt4942ktyj.execute-api.us-east-1.amazonaws.com/v1";
+  API_ENDPOINT: string = "https://api.prabeensoti.com/v1";
 
 
   constructor(private http: HttpClient) {

@@ -1,13 +1,10 @@
 import { Injectable } from '@angular/core';
-import {Router} from "@angular/router";
-import {HttpClient} from "@angular/common/http";
-import {BehaviorSubject} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
 })
 export class CognitoService {
-  private cognitoHostedUIUrl = 'https://prabeensoti.auth.us-east-1.amazoncognito.com';
+  private cognitoHostedUIUrl = 'https://admin-prabeensoti.auth.us-east-1.amazoncognito.com';
 
 
   constructor() {
@@ -15,7 +12,7 @@ export class CognitoService {
 
   signIn(){
     const queryParams = {
-      client_id: '13gl4c5ds4p980hb5fli3e19ql',
+      client_id: '7ci7o6g5kkfk6ms09mmu19g3hc',
       response_type: 'token',
       scope: 'aws.cognito.signin.user.admin+email+openid+phone+profile',
       redirect_uri: encodeURIComponent('http://localhost:4200/redirect'),
@@ -27,7 +24,7 @@ export class CognitoService {
 
   signOut(){
     const queryParams = {
-      client_id: '13gl4c5ds4p980hb5fli3e19ql',
+      client_id: '7ci7o6g5kkfk6ms09mmu19g3hc',
       response_type: 'token',
       scope: 'aws.cognito.signin.user.admin+email+openid+phone+profile',
       logout_uri: encodeURIComponent('http://localhost:4200'),
