@@ -1,27 +1,25 @@
-# ProfileAdmin
+# ProfileUi
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.9.
 
-## Development server
+## Architecture Diagram of the Project
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+![Architecture Diagram of the Projects](/PrabeenSotiArchitecture.png)
 
-## Code scaffolding
+## Admin Dashboard Project Link
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+[Profile Admin Panel](https://github.com/prabeensoti/profile-admin) 
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Work History
+1. Jan-07 => **Project Setup**
+2. Jan-09 => **Home Page Layout**
+3. Jan-10 => **Resume Page Layout**
+4. Jan-13 => **Blog and Contact Page Layout**
+5. Jan-14 => **Some Issue Fixed**
+6. Jan-20 => **Some Issue Fixed**
+7. Jan-21 => **Add Login Page in [Profile Admin Panel](https://github.com/prabeensoti/profile-admin) and AWS Coginito in Academy account.**
+8. Jan-22 => **Add Blog Dispaly and Add Page in [Profile Admin Panel](https://github.com/prabeensoti/profile-admin)  and call Lamdas in Academy Account**
+9. Jan-23 => **Add Toast Notification Feature in in [Profile Admin Panel](https://github.com/prabeensoti/profile-admin)**
+10. Jan-24 => **Some Issues Fixed**
+11. Jan-27 => **AWS Route 53, Certificate, Lamdas, API Gateway, Dynamo DB, S3, Cloud Watch, SNS in  personal account**
+12. Jan-28 => **Deploy Frontend on S3 Bucket, and Add Cloud Front**
