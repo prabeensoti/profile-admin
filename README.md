@@ -6,9 +6,9 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ![Architecture Diagram of the Projects](/PrabeenSotiArchitecture.png)
 
-## Admin Dashboard Project Link
+## Profile UI Project Link
 
-[Profile Admin Panel](https://github.com/prabeensoti/profile-admin) 
+[Profile UI](https://github.com/prabeensoti/profile-ui) 
 
 ## Work History
 1. Jan-07 => **Project Setup**
